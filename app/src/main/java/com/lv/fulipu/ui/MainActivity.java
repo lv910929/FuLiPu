@@ -1,8 +1,9 @@
 package com.lv.fulipu.ui;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,6 +15,7 @@ import com.lv.fulipu.R;
 import com.lv.fulipu.ui.base.BaseActivity;
 import com.lv.fulipu.utils.DoubleClickUtil;
 import com.lv.fulipu.utils.IntentUtils;
+import com.lv.fulipu.utils.SnackBarUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +50,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navView.setNavigationItemSelectedListener(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -56,7 +59,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             if (DoubleClickUtil.isFastDoubleClick()) {
                 super.onBackPressed();
             } else {
-                Snackbar.make(contentMain, getString(R.string.gank_hint_exit_app), Snackbar.LENGTH_LONG).show();
+                SnackBarUtils.defaultSnackBar(contentMain, getString(R.string.gank_hint_exit_app)).show();
             }
         }
     }
