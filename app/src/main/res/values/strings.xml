@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">福利铺</string>
+
+    <string name="download_url">http://fir.im/gankmm</string>
+
+    <string name="navigation_drawer_open">菜单打开</string>
+    <string name="navigation_drawer_close">菜单关闭</string>
+
+    <string name="action_settings">设置</string>
+
+    <string name="current">刚刚</string>
+    <string name="hour_before">%d小时前</string>
+    <string name="minute_before">%d分钟前</string>
+    <string name="second_before">%d秒前</string>
+
+    <!--网络相关-->
+    <string name="gank_net_fail">网络出问题啦</string>
+    <string name="gank_get_data_fail">获取数据失败</string>
+    <!--页面标题-->
+    <string name="gank_page_title_girls">美女~</string>
+
+    <!--Dialog-->
+    <string name="gank_dialog_title_tishi">提示</string>
+    <string name="gank_dialog_msg_savehint">长按图片即可保存，试试吧！</string>
+    <string name="gank_dialog_confirm">确定</string>
+    <string name="gank_dialog_msg_save_image">是否要将图片保存到手机？</string>
+    <string name="gank_hint_save_pic_fail">图片保存失败</string>
+    <string name="gank_dialog_cancle">取消</string>
+    <string name="gank_hint_exit_app">再按一次退出程序</string>
+    <string name="gank_hint_copy_success">复制成功</string>
+
+</resources>

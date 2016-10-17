@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fuli"
+            android:icon="@drawable/ic_girl"
+            android:title="福利" />
+        <item
+            android:id="@+id/nav_like"
+            android:icon="@drawable/ic_like"
+            android:title="喜欢" />
+    </group>
+
+    <group android:id="@+id/second_group">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share"
+            android:title="分享" />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_about"
+            android:title="关于" />
+    </group>
+
+</menu>
