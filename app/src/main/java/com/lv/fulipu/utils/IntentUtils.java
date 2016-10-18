@@ -18,8 +18,6 @@ public class IntentUtils {
     public static final String WebUrl = "WebUrl";
     public static final String DayDate = "DayDate";
 
-    public static final String PushMessage = "PushMessage";
-
     public static void startToImageShow(Context context, ArrayList<String> mDatas, int position) {
        /* Intent intent = new Intent(context.getApplicationContext(), ImagesActivity.class);
         intent.putStringArrayListExtra(ImageArrayList, mDatas);
