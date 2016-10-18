@@ -1,8 +1,13 @@
 package com.lv.fulipu.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+
+import com.lv.fulipu.R;
+import com.lv.fulipu.ui.activity.WebViewActivity;
 
 import java.util.ArrayList;
 
@@ -25,12 +30,15 @@ public class IntentUtils {
         context.startActivity(intent);*/
     }
 
-    public static void startToWebActivity(Context context, String titleFlag, String title, String url) {
-        /*Intent intent = new Intent(context.getApplicationContext(), WebActivity.class);
-        intent.putExtra(WebTitleFlag, titleFlag);
-        intent.putExtra(WebTitle, title);
-        intent.putExtra(WebUrl, url);
-        context.startActivity(intent);*/
+    //webView跳转
+    public static void redirectWebView(Context context, String title, String loadUrl) {
+        Intent intent = new Intent(context, WebViewActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("loadUrl", loadUrl);
+        bundle.putString("title", title);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+        ((Activity) context).overridePendingTransition(R.anim.slide_in, R.anim.slide_out_back);
     }
 
     public static void startAboutActivity(Context context) {

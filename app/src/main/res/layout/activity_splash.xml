@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:fitsSystemWindows="true"
-    tools:context="com.lv.fulipu.ui.SplashActivity">
+    tools:context="com.lv.fulipu.ui.activity.SplashActivity">
 
     <ImageView
         android:id="@+id/image_splash_logo"

@@ -1,4 +1,4 @@
-package com.lv.fulipu.ui;
+package com.lv.fulipu.ui.activity;
 
 import android.os.Bundle;
 import android.view.animation.Animation;

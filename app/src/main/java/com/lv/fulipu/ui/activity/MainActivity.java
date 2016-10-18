@@ -1,4 +1,4 @@
-package com.lv.fulipu.ui;
+package com.lv.fulipu.ui.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.lv.fulipu.R;
 import com.lv.fulipu.ui.base.BaseActivity;
+import com.lv.fulipu.utils.ActivityUtil;
 import com.lv.fulipu.utils.DoubleClickUtil;
 import com.lv.fulipu.utils.IntentUtils;
 import com.lv.fulipu.utils.SnackBarUtils;
@@ -71,14 +72,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         int id = item.getItemId();
         if (id == R.id.nav_fuli) {
 
+            drawerLayout.closeDrawer(GravityCompat.START);
         } else if (id == R.id.nav_like) {
 
+            drawerLayout.closeDrawer(GravityCompat.START);
         } else if (id == R.id.nav_share) {//分享
             IntentUtils.startAppShareText(MainActivity.this, "福利铺", getString(R.string.download_url));
+            drawerLayout.closeDrawer(GravityCompat.START);
         } else if (id == R.id.nav_info) {//关于
-
+            ActivityUtil.startActivity(MainActivity.this, AboutActivity.class, null);
         }
-        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 

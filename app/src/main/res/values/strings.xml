@@ -6,7 +6,10 @@
     <string name="navigation_drawer_open">菜单打开</string>
     <string name="navigation_drawer_close">菜单关闭</string>
 
-    <string name="action_settings">设置</string>
+    <!-- 关于 -->
+    <string name="github_address">https://github.com/lv910929/FuLiPu</string>
+    <string name="gank_address">http://www.gank.io/</string>
+    <string name="thanks_gank_hint">感谢gank提供的妹纸们(￢_￢)</string>
 
     <string name="current">刚刚</string>
     <string name="hour_before">%d小时前</string>
