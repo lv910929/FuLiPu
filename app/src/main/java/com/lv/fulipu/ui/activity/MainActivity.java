@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.lv.fulipu.R;
@@ -31,6 +32,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     DrawerLayout drawerLayout;
     @BindView(R.id.toolbar)
     Toolbar toolbarMain;
+    @BindView(R.id.frame_main)
+    FrameLayout frameMain;
+
+    private int navigationCheckedItemId = R.id.nav_fuli;
+    private String navigationCheckedTitle = "福利";
+    private static final String savedInstanceStateItemId = "navigationCheckedItemId";
+    private static final String savedInstanceStateTitle = "navigationCheckedTitle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,5 +92,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
         return true;
     }
+
 
 }
