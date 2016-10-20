@@ -6,5 +6,8 @@ package com.lv.fulipu.view;
 
 public interface BaseView {
 
+    void showLoading();
+
+    void errorLayoutShow();
 
 }
