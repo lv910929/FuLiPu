@@ -1,6 +1,7 @@
 package com.lv.fulipu.presenter;
 
 import com.lv.fulipu.data.Constants;
+import com.lv.fulipu.model.HttpResult;
 import com.lv.fulipu.model.Meizi;
 import com.lv.fulipu.net.ApiCallback;
 import com.lv.fulipu.net.BuildApi;
@@ -22,15 +23,18 @@ public class MeiziPresenter extends BasePresenter<MeiziView> {
         attachView(view);
     }
 
+    /**
+     * 获取gank数据
+     */
     public void getMeiziData() {
         mvpView.showLoading();
         currentPage = 1;
         addSubscription(BuildApi.getAPIService().getMeiziData(Constants.FlagWelFare, NUM_OF_PAGE, currentPage),
-                new ApiCallback<List<Meizi>>() {
+                new ApiCallback<HttpResult<List<Meizi>>>() {
 
                     @Override
-                    public void onSuccess(List<Meizi> model) {
-                        mvpView.contentLayoutShow(model);
+                    public void onSuccess(HttpResult<List<Meizi>> model) {
+                        mvpView.contentLayoutShow(model.getResults());
                     }
 
                     @Override
@@ -45,6 +49,9 @@ public class MeiziPresenter extends BasePresenter<MeiziView> {
                 });
     }
 
+    /**
+     * 获取更多数据
+     */
     public void getMoreMeiziData() {
         addSubscription(BuildApi.getAPIService().getMeiziData(Constants.FlagWelFare, NUM_OF_PAGE, currentPage),
                 new ApiCallback<List<Meizi>>() {

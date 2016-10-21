@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="暂无数据~~~"
-        android:textColor="@color/grey700"
         android:textSize="14sp" />
 
 </LinearLayout>

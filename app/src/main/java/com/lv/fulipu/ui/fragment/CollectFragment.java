@@ -7,10 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lv.fulipu.R;
-import com.lv.fulipu.ui.base.BaseFragment;
+import com.lv.fulipu.model.Meizi;
+import com.lv.fulipu.presenter.CollectPresenter;
+import com.lv.fulipu.ui.base.MvpFragment;
+import com.lv.fulipu.view.CollectView;
+
+import java.util.List;
 
 
-public class CollectFragment extends BaseFragment {
+public class CollectFragment extends MvpFragment<CollectPresenter> implements CollectView {
 
     @Nullable
     @Override
@@ -23,4 +28,20 @@ public class CollectFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+
+    @Override
+    protected CollectPresenter createPresenter() {
+        return new CollectPresenter(this);
+    }
+
+    @Override
+    public void contentLayoutShow(List<Meizi> meiziList) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
 }

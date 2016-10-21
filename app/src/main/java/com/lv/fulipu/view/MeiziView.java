@@ -14,4 +14,5 @@ public interface MeiziView extends BaseView {
 
     void showMoreContent(List<Meizi> meiziList);
 
+    void errorLayoutShow();
 }

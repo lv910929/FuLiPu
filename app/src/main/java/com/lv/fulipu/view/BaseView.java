@@ -8,6 +8,4 @@ public interface BaseView {
 
     void showLoading();
 
-    void errorLayoutShow();
-
 }

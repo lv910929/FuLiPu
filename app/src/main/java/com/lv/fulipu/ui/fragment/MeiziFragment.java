@@ -3,6 +3,7 @@ package com.lv.fulipu.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,10 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.lv.fulipu.R;
 import com.lv.fulipu.model.Meizi;
 import com.lv.fulipu.presenter.MeiziPresenter;
+import com.lv.fulipu.ui.adapter.MeiziAdapter;
 import com.lv.fulipu.ui.base.MvpFragment;
 import com.lv.fulipu.view.MeiziView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,7 +31,7 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
     @BindView(R.id.recyclerView_meizi)
     EasyRecyclerView recyclerViewMeizi;
 
-    private List<Meizi> meizis;
+    private MeiziAdapter meiziAdapter;
 
     @Nullable
     @Override
@@ -42,16 +43,30 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initData();
-    }
-
-    private void initData() {
-        meizis = new ArrayList<>();
+        setRecyclerViewMeizi();
+        mvpPresenter.getMeiziData();
     }
 
     @Override
     protected MeiziPresenter createPresenter() {
         return new MeiziPresenter(this);
+    }
+
+    private void setRecyclerViewMeizi() {
+        meiziAdapter = new MeiziAdapter(getActivity());
+        meiziAdapter.setMore(R.layout.view_more, new RecyclerArrayAdapter.OnMoreListener() {
+            @Override
+            public void onMoreShow() {
+                mvpPresenter.getMoreMeiziData();
+            }
+
+            @Override
+            public void onMoreClick() {
+
+            }
+        });
+        recyclerViewMeizi.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        recyclerViewMeizi.setAdapter(meiziAdapter);
     }
 
     @Override
@@ -60,21 +75,18 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
             recyclerViewMeizi.setRefreshing(false);
         }
         if (!meiziList.isEmpty()) {
+            meiziAdapter.addAll(meiziList);
             recyclerViewMeizi.showRecycler();
         } else {
             recyclerViewMeizi.showEmpty();
         }
-        meizis.clear();
-        meizis.addAll(meiziList);
     }
 
     @Override
     public void showMoreContent(List<Meizi> meiziList) {
-
+        meiziAdapter.stopMore();
         if (meiziList != null && meiziList.size() > 0) {
-            meizis.addAll(meiziList);
-        } else {//说明没有更多了
-
+            meiziAdapter.addAll(meiziList);
         }
     }
 
