@@ -32,4 +32,7 @@
     <string name="gank_hint_exit_app">再按一次退出程序</string>
     <string name="gank_hint_copy_success">复制成功</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
