@@ -14,9 +14,11 @@ import com.lv.fulipu.R;
 import com.lv.fulipu.model.Meizi;
 import com.lv.fulipu.presenter.MeiziPresenter;
 import com.lv.fulipu.ui.adapter.MeiziAdapter;
+import com.lv.fulipu.ui.adapter.WelfareAdapter;
 import com.lv.fulipu.ui.base.MvpFragment;
 import com.lv.fulipu.view.MeiziView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -32,6 +34,8 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
     EasyRecyclerView recyclerViewMeizi;
 
     private MeiziAdapter meiziAdapter;
+    private WelfareAdapter welfareAdapter;
+    private List<Meizi> meizis;
 
     @Nullable
     @Override
@@ -65,8 +69,10 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
 
             }
         });
+        meizis = new ArrayList<>();
+        welfareAdapter = new WelfareAdapter(meizis);
         recyclerViewMeizi.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        recyclerViewMeizi.setAdapter(meiziAdapter);
+        recyclerViewMeizi.setAdapter(welfareAdapter);
     }
 
     @Override
@@ -75,7 +81,7 @@ public class MeiziFragment extends MvpFragment<MeiziPresenter> implements MeiziV
             recyclerViewMeizi.setRefreshing(false);
         }
         if (!meiziList.isEmpty()) {
-            meiziAdapter.addAll(meiziList);
+            welfareAdapter.addData(meiziList);
             recyclerViewMeizi.showRecycler();
         } else {
             recyclerViewMeizi.showEmpty();

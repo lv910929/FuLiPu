@@ -33,18 +33,20 @@ public class MeiziViewHolder extends MyBaseViewHolder<Meizi> {
     @Override
     public void setData(Meizi data) {
         super.setData(data);
-        textTitle.setText(data.getPublishedAt());
-        Glide.with(getContext())
-                .load(data.getUrl())
-                .centerCrop()
-                .into(imageMeizi)
-                .getSize(new SizeReadyCallback() {
-                    @Override
-                    public void onSizeReady(int i, int i1) {
-                        if (!cardViewMeizi.isShown()) {
-                            cardViewMeizi.setVisibility(View.VISIBLE);
+        if (data != null) {
+            textTitle.setText(data.getPublishedAt());
+            Glide.with(getContext())
+                    .load(data.getUrl())
+                    .centerCrop()
+                    .into(imageMeizi)
+                    .getSize(new SizeReadyCallback() {
+                        @Override
+                        public void onSizeReady(int i, int i1) {
+                            if (!cardViewMeizi.isShown()) {
+                                cardViewMeizi.setVisibility(View.VISIBLE);
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 }

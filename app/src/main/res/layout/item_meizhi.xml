@@ -8,25 +8,21 @@
     android:layout_marginRight="1dp"
     android:layout_marginTop="2dp"
     android:background="@drawable/bg_card"
-    android:orientation="vertical"
-    android:visibility="invisible">
+    android:orientation="vertical">
 
     <com.lv.fulipu.ui.widget.RatioImageView
         android:id="@+id/image_meizi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY" />
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/text_title"
