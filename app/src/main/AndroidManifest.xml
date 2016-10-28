@@ -30,7 +30,9 @@
         <activity
             android:name=".ui.activity.AboutActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".ui.activity.WebViewActivity" />
+        <activity
+            android:name=".ui.activity.WebViewActivity"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

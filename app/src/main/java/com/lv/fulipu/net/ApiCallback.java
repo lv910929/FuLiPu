@@ -20,8 +20,7 @@ public abstract class ApiCallback<M> extends Subscriber<M> {
             String msg = httpException.getMessage();
             if (code == 504) {
                 msg = "网络不给力";
-            }
-            if (code == 502 || code == 404) {
+            } else if (code == 502 || code == 404) {
                 msg = "服务器异常，请稍后再试";
             }
             onFailure(msg);

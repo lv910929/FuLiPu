@@ -14,7 +14,6 @@ import com.lv.fulipu.view.CollectView;
 
 import java.util.List;
 
-
 public class CollectFragment extends MvpFragment<CollectPresenter> implements CollectView {
 
     @Nullable

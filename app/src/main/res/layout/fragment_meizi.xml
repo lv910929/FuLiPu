@@ -5,12 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.jude.easyrecyclerview.EasyRecyclerView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_meizi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_empty="@layout/view_empty"
-        app:layout_error="@layout/view_error"
-        app:layout_progress="@layout/view_progress" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

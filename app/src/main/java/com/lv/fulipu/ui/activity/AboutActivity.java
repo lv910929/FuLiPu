@@ -56,6 +56,7 @@ public class AboutActivity extends SwipeBackActivity {
         libraryBeanList.add(new LibraryBean("Butterknife", "https://github.com/JakeWharton/butterknife"));
         libraryBeanList.add(new LibraryBean("Realm", "https://github.com/realm/realm-java"));
         libraryBeanList.add(new LibraryBean("Okhttp", "https://github.com/square/okhttp"));
+        libraryBeanList.add(new LibraryBean("BaseAdapterHelper", "https://github.com/CymChad/BaseRecyclerViewAdapterHelper"));
     }
 
     @Override
